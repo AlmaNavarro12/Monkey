@@ -67,7 +67,9 @@ class SecondPage extends StatelessWidget {
                       primary: Theme.of(context).primaryColor,
                       onPrimary: Colors.white
                     ),
-                    onPressed: () => {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/form');
+                    },
                     child: const Text('Entrar',
                     style: TextStyle(
                       fontSize: 25.0
@@ -87,7 +89,9 @@ class SecondPage extends StatelessWidget {
                       primary: Colors.white,
                       onPrimary: Theme.of(context).primaryColor
                     ),
-                    onPressed: () => {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/sign');
+                    },
                     child: const Text('Registrarse',
                     style: TextStyle(
                       fontSize: 25.0),

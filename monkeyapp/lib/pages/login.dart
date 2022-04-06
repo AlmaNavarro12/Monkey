@@ -35,8 +35,8 @@ class _FormularioScreenState extends State<FormularioScreen> {
     return Scaffold(
       body: Container(
             padding: const EdgeInsets.symmetric(
-              horizontal: 40,
-              vertical: 30,
+              horizontal: 45,
+              vertical: 35,
             ),
             child: Column(
               children: [
@@ -45,14 +45,14 @@ class _FormularioScreenState extends State<FormularioScreen> {
                   style: ,
                 ),
                 Spacer(),
-                Text('Add your details to login'),
+                Text('Agrega los detalles de inicio de sesión'),
                 Spacer(),
                 Cus    tomTextInput(
-                  hintText: "Your email",
+                  hintText: "Tu correo",
                 ),
                 Spacer(),
                 CustomTextInput(
-                  hintText: "password",
+                  hintText: "Password",
                 ),
                 Spacer(),
                 SizedBox(
@@ -69,12 +69,12 @@ class _FormularioScreenState extends State<FormularioScreen> {
                     Navigator.of(context)
                         .pushReplacementNamed(ForgetPwScreen.routeName);
                   },
-                  child: Text("Forget your password?"),
+                  child: Text("¿Olvidaste tu contraseña?"),
                 ),
                 Spacer(
                   flex: 2,
                 ),
-                Text("or Login With"),
+                Text("O inicia con"),
                 Spacer(),
                 SizedBox(
                   height: 50,
@@ -83,7 +83,7 @@ class _FormularioScreenState extends State<FormularioScreen> {
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
                         Color(
-                          0xFF367FC0,
+                          ,
                         ),
                       ),
                     ),
