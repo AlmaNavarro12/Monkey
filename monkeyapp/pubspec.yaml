@@ -66,6 +66,15 @@ flutter:
     - lib/src/img/logo.png
     - lib/src/img/superior_naranja.png
     - lib/src/img/superior_sombra.png
+    - lib/src/img/001-home.png
+    - lib/src/img/002-shopping-bag.png
+    - lib/src/img/activo1.png
+    - lib/src/img/activo2.png
+    - lib/src/img/Address.png
+    - lib/src/img/ConfirmPassword.png
+    - lib/src/img/Elipse.png
+    - lib/src/img/Email.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
