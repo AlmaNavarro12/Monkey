@@ -1,67 +1,103 @@
 import 'package:flutter/material.dart';
+import 'login_page.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  static const routeName = '/signUp';
 
-  // This widget is the root of your application.
+  static double getScreenWidth(BuildContext context) {
+    return MediaQuery.of(context).size.width;
+  }
+
+  static double getScreenHeight(BuildContext context) {
+    return MediaQuery.of(context).size.height;
+  }
+
+  static TextTheme getTheme(BuildContext context) {
+    return Theme.of(context).textTheme;
+  }
+
   @override
   Widget build(BuildContext context) {
-    final _width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+        body: Container(
+      width: getScreenWidth(context),
+      height: getScreenHeight(context),
+      child: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
           child: Column(
             children: [
-              const SizedBox(
-                height: 20,
+              Text(
+                "Registro de usuario",
+                style: getTheme(context).headline6,
               ),
-              const Text(
-                'Nueva contraseña',
-                style: TextStyle(fontSize: 25.0),
+              Spacer(),
+              Text(
+                "Agrega los datos correspondientes para su registro",
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                "Por favor ingrese a su correo para restaurar una nueva contraseña",
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
+              Spacer(),
+              TextFormField( decoration: const InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.supervised_user_circle),
-                    labelText: 'Nueva contraseña'),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
+                    labelText: 'Nombre completo')),
+              Spacer(),
+              TextFormField( decoration: const InputDecoration(
                     border: InputBorder.none,
                     prefixIcon: Icon(Icons.supervised_user_circle),
-                    labelText: 'Confirmar contraseña'),
-              ),
-              SizedBox(
-                height: 20,
-              ),
+                    labelText: 'Correo electronico')),
+              Spacer(),
+              TextFormField(decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.supervised_user_circle),
+                    labelText: 'Celular')),
+              Spacer(),
+              TextFormField(decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.supervised_user_circle),
+                    labelText: 'Dirección')),
+              Spacer(),
+              TextFormField(decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.supervised_user_circle),
+                    labelText: 'Contraseña')),
+              Spacer(),
+              TextFormField(decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.supervised_user_circle),
+                    labelText: 'Confirmar contraseña')),
+              Spacer(),
               SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/form');
-                  },
-                  child: Text("Siguiente"),
+                  onPressed: () {},
+                  child: Text("Crear Registro"),
+                ),
+              ),
+              Spacer(),
+              GestureDetector(
+                onTap: () {
+                      Navigator.pushNamed(context, '/');
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    const Text("¿Ya tienes una cuenta?"),
+                    const Text(
+                      "Iniciar Sesión",
+                      style: TextStyle(
+                        color: Colors.orange,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],
           ),
         ),
       ),
-    );
+    ));
   }
 }

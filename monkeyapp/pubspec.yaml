@@ -74,6 +74,12 @@ flutter:
     - lib/src/img/ConfirmPassword.png
     - lib/src/img/Elipse.png
     - lib/src/img/Email.png
+    - lib/src/img/vector1.png
+    - lib/src/img/vector2.png
+    - lib/src/img/vector3.png
+    - lib/src/img/vector4.png
+
+
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

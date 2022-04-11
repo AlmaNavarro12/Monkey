@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class FormularioScreen extends StatefulWidget {
-  FormularioScreen({Key? key}) : super(key: key);
+class LoginWithScreen extends StatefulWidget {
+  LoginWithScreen({Key? key}) : super(key: key);
 
   @override
-  State<FormularioScreen> createState() => _FormularioScreenState();
+  State<LoginWithScreen> createState() => _LoginWithScreenState();
 }
 
-class _FormularioScreenState extends State<FormularioScreen> {
+class _LoginWithScreenState extends State<LoginWithScreen> {
   late TextEditingController _controller;
   var maskFormatter ;
 
@@ -39,80 +39,79 @@ class _FormularioScreenState extends State<FormularioScreen> {
               vertical: 35,
             ),
             child: Column(
-              children: [
-                Text(
-                  "Login",
-                  style: ,
+              children: <Widget> [
+                const Text(
+                  "Inicio"
                 ),
-                Spacer(),
-                Text('Agrega los detalles de inicio de sesión'),
-                Spacer(),
-                Cus    tomTextInput(
-                  hintText: "Tu correo",
+                const Spacer(),
+                const Text('Agrega los detalles de inicio de sesión'),
+                const Spacer(),
+                TextFormField(
+                 decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.supervised_user_circle),
+                    labelText: 'Tu correo'),
                 ),
-                Spacer(),
-                CustomTextInput(
-                  hintText: "Password",
+                const Spacer(),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    prefixIcon: Icon(Icons.supervised_user_circle),
+                    labelText: 'Contraseña'),
                 ),
-                Spacer(),
+                const Spacer(),
                 SizedBox(
                   height: 50,
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text("Login"),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/newpass');
+                    },
+                    child: const Text("Login"),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(ForgetPwScreen.routeName);
                   },
-                  child: Text("¿Olvidaste tu contraseña?"),
+                  child: const Text("¿Olvidaste tu contraseña?"),
                 ),
-                Spacer(
+                const Spacer(
                   flex: 2,
                 ),
-                Text("O inicia con"),
-                Spacer(),
+                const Text("O inicia con"),
+                const Spacer(),
                 SizedBox(
                   height: 50,
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                        Color(
-                          ,
-                        ),
+                        Colors.blueAccent
                       ),
                     ),
                     onPressed: () {},
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          Helper.getAssetName(
-                            "fb.png",
-                            "virtual",
-                          ),
+                        Image.asset(''
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 30,
                         ),
-                        Text("Login with Facebook")
+                        const Text("Iniciar sesión con Facebook")
                       ],
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 SizedBox(
                   height: 50,
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                        Color(
+                        const Color(
                           0xFFDD4B39,
                         ),
                       ),
@@ -121,36 +120,29 @@ class _FormularioScreenState extends State<FormularioScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          Helper.getAssetName(
-                            "google.png",
-                            "virtual",
-                          ),
-                        ),
-                        SizedBox(
+                        Image.asset(''),
+                        const SizedBox(
                           width: 30,
                         ),
-                        Text("Login with Google")
+                        const Text("Iniciar con Google")
                       ],
                     ),
                   ),
                 ),
-                Spacer(
+                const Spacer(
                   flex: 4,
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(SignUpScreen.routeName);
+                    Navigator.of(context);
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an Account?"),
-                      Text(
-                        "Sign Up",
+                      const Text("¿No tienes una cuenta?"),
+                      const Text(
+                        "Registrate",
                         style: TextStyle(
-                          color: AppColor.orange,
                           fontWeight: FontWeight.bold,
                         ),
                       )
@@ -160,12 +152,6 @@ class _FormularioScreenState extends State<FormularioScreen> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-}
-
-
-
-class CustomTextInput {
+        );;
+  }
 }
